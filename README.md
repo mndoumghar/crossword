@@ -85,10 +85,4 @@ The solver tries to place each word in each slot recursively. If a word cannot l
 - Language: JavaScript (vanilla)
 - Concepts: Recursion, Backtracking, 2D Arrays, Conditionals
 
----
 
-## 💡 Future Improvements
-
-- Visual interface with HTML/CSS
-- Word dictionary check
-- Difficulty levels
