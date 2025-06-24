@@ -3,7 +3,6 @@
 
 This is a simple **Crossword Puzzle Solver** built in **JavaScript**. It takes a grid and a list of words, then uses **backtracking** to fill all valid positions in the crossword.
 
----
 
 ## 📌 How it works
 
@@ -82,7 +81,10 @@ The solver tries to place each word in each slot recursively. If a word cannot l
 
 ## 🛠 Technologies Used
 
-- Language: JavaScript (vanilla)
+- Language: JavaScript
+
 - Concepts: Recursion, Backtracking, 2D Arrays, Conditionals
 
-
+## Add File Test Java script
+- ✅ VALID CASE
+- ❌ INVALID TESTS 
