@@ -226,6 +226,7 @@ function printGrid(grid) {
     lines.push(rowStr)
   }
   return lines.join('\n')  
+}
 
 
 
