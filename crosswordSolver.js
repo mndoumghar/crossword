@@ -1,4 +1,5 @@
 function validateInput(puzzle, words) {
+  
     if (typeof puzzle !== 'string' || !Array.isArray(words)) {
         return false
     }
@@ -14,9 +15,10 @@ function validateInput(puzzle, words) {
         return false
     }
 
-    if (!puzzle.match(/^[01.\n]+$/)) {
-        return false
-    }
+//     if (!puzzle.match(/^[01.\n]+$/)) {
+//     return false
+// }
+
 
     let set = new Set(words)
     if (set.size !== words.length) {
@@ -25,6 +27,7 @@ function validateInput(puzzle, words) {
 
     let grid = parseMap(puzzle)
     let slots = findSlots(grid)
+
 
     let totalSlotLength = slots.reduce((acc, slot) => acc + slot.len, 0)
     let totalWordsLength = words.reduce((acc, word) => acc + word.length, 0)
@@ -149,6 +152,12 @@ function place(grid, slot, word) {
         } else {
                x = slot.x + i
         }
+
+
+
+
+
+
          if(slot.dir === 'H')  {
             y=  slot.y + i
         } else {
@@ -189,6 +198,8 @@ function solve(grid, slots, words, i = 0) {
     }
 
    let slot = slots[i]
+const puzzle = '2001\n0..0\n2000\n0..0'
+const words = ['casa', 'alan', 'ciao', 'anta']
     for (let w = 0; w < words.length; w++) {
        let word = words[w]
 
@@ -205,6 +216,8 @@ function solve(grid, slots, words, i = 0) {
 
             remove(grid, slot, old)
             words[w] = word
+const puzzle = '2001\n0..0\n2000\n0..0'
+const words = ['casa', 'alan', 'ciao', 'anta']
         }
     }
 
@@ -247,16 +260,13 @@ function crosswordSolver(puzzle, words) {
 
 
 if (!solve(grid, slots, words)) {
-    resFinal = "Error ... "
+    resFinal = "Error"
 } else {
     resFinal = printGrid(grid)
 }
 
     return resFinal
-}
-
-
-const puzzle = '2001\n0..0\n1000\n0..0'
+}const puzzle = '2001\n0..0\n1000\n0..0'
 const words = ['casa', 'alan', 'ciao', 'anta']
 console.log(crosswordSolver(puzzle, words))
 
