@@ -225,8 +225,7 @@ function printGrid(grid) {
     }
     lines.push(rowStr)
   }
-  return lines.join('\n')  // هادي كتربط الأسطر بدون سطر فارغ في الآخر
-}
+  return lines.join('\n')  
 
 
 
@@ -247,7 +246,7 @@ function crosswordSolver(puzzle, words) {
 
 
 if (!solve(grid, slots, words)) {
-    resFinal = "Error"
+    resFinal = "Error ... "
 } else {
     resFinal = printGrid(grid)
 }
@@ -256,33 +255,8 @@ if (!solve(grid, slots, words)) {
 }
 
 
-const puzzle = `...1...........
-..1000001000...
-...0....0......
-.1......0...1..
-.0....100000000
-100000..0...0..
-.0.....1001000.
-.0.1....0.0....
-.10000000.0....
-.0.0......0....
-.0.0.....100...
-...0......0....
-..........0....`
-const words = [
-  'sun',
-  'sunglasses',
-  'suncream',
-  'swimming',
-  'bikini',
-  'beach',
-  'icecream',
-  'tan',
-  'deckchair',
-  'sand',
-  'seaside',
-  'sandals',
-]
+const puzzle = '2001\n0..0\n1000\n0..0'
+const words = ['casa', 'alan', 'ciao', 'anta']
 console.log(crosswordSolver(puzzle, words))
 
 
