@@ -211,31 +211,23 @@ function solve(grid, slots, words, i = 0) {
     return false
 }
 
-
 function printGrid(grid) {
-
-    let line = ''
-
+  let lines = []
   for (let i = 0; i < grid.length; i++) {
-    line += ''
-
+    let rowStr = ''
     for (let j = 0; j < grid[i].length; j++) {
-     let cell = grid[i][j]
-
+      let cell = grid[i][j]
       if (cell === true || cell === false) {
-        
-        line += '.'  
+        rowStr += '.'
       } else {
-
-        line += cell  
+        rowStr += cell
       }
     }
-
-    line+= '\n'
-
+    lines.push(rowStr)
   }
-  return line
+  return lines.join('\n')  // هادي كتربط الأسطر بدون سطر فارغ في الآخر
 }
+
 
 
 function crosswordSolver(puzzle, words) {
@@ -254,17 +246,45 @@ function crosswordSolver(puzzle, words) {
 
 
 
+if (!solve(grid, slots, words)) {
+    resFinal = "Error"
+} else {
+    resFinal = printGrid(grid)
+}
 
-    if (!solve(grid, slots, words.slice())) {
-
-        resFinal = "Error  Syntax Words ..."
-
-    } else {
-       resFinal = printGrid(grid)
-    }
     return resFinal
 }
-const puzzle = '2001\n0..0\n2000\n0..0'
-const words = ['casa', 'alan', 'ciao', 'anta']
+
+
+const puzzle = `...1...........
+..1000001000...
+...0....0......
+.1......0...1..
+.0....100000000
+100000..0...0..
+.0.....1001000.
+.0.1....0.0....
+.10000000.0....
+.0.0......0....
+.0.0.....100...
+...0......0....
+..........0....`
+const words = [
+  'sun',
+  'sunglasses',
+  'suncream',
+  'swimming',
+  'bikini',
+  'beach',
+  'icecream',
+  'tan',
+  'deckchair',
+  'sand',
+  'seaside',
+  'sandals',
+]
 console.log(crosswordSolver(puzzle, words))
+
+
+module.exports = { crosswordSolver }
 
